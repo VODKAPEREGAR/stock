@@ -9,13 +9,13 @@
 {% block content %}
 <div class=adv>
     {% for post in advert %}
+    {{ post.title }}
     {{ post.category }}
     {{ post.subcategory }}
-    {{ post.title }}
     {{ post.city }}
     {{ post.price }}
-{% endfor  %}
 </div>
+{% endfor  %}
 
 
 
