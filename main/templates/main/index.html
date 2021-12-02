@@ -7,6 +7,7 @@
 
 
 {% block content %}
+<h1>Объявления</h1>
 <div class=adv>
     {% for post in advert %}
     {{ post.title }}
@@ -14,6 +15,7 @@
     {{ post.subcategory }}
     {{ post.city }}
     {{ post.price }}
+    <br>
 </div>
 {% endfor  %}
 
