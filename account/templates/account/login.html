@@ -1,0 +1,15 @@
+{% extends 'account/account_base.html' %}
+
+{% block title %} Логин {% endblock %}
+
+{% block content %}
+    <form method='post' action="{% url 'account:login' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class='form-row'>
+            <button type='sumbit'>Войти</button>
+        </div>
+        <p>Если у вас нет аккаунта, зарегестрируйтесь</p>
+        <a href='{% url 'account:register' %}'>Зарегистрироваться</a>
+    </form>
+{% endblock %}

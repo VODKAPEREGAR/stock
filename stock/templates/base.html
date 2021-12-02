@@ -1,0 +1,39 @@
+<html lang='ru'>
+    <head>
+        {% load static %}
+
+        <title>{% block title %}{% endblock title %}</title>
+        {% block styles %}
+            <link rel='stylesheet' href="{% static 'styles.css' %}">
+        {% endblock %}
+        {% block header_base %}
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'add' %}">Добавить объявление</a>
+            <div class='reg'>
+                
+            </div>
+        {% endblock header_base %}
+    </head>
+    <body>
+        {% if request.user.is_authenticated %}
+            <p> {{ request.user.username }} </p>
+        {% else %}
+            <a href="{% url 'account:register'%}">Регистрация</a> | <a href="{% url 'account:login'%}">Войти</a>
+        {% endif %}
+
+        {% block content %}
+        {% endblock content %}
+        
+        {% block scripts %}
+        {% endblock %}
+
+        {%block footer_base%}
+        <div class='footer'>
+            {% comment %} <a href="{% url 'ads' %}">Реклама</a> {% endcomment %}
+            <a href="{% url 'help' %}">Помощь</a>
+            {% comment %} <a href="{% url 'rules' %}">Правила</a> {% endcomment %}
+            {% comment %} <a href="{% url 'about' %}">О нас</a> {% endcomment %}
+        </div>
+        {%endblock footer_base%}
+    </body>     
+</html>

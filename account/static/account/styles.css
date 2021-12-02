@@ -1,0 +1,11 @@
+.form-row {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+}
+
+.error-message {
+    color: red;
+}

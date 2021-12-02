@@ -1,0 +1,25 @@
+{% extends "main/main_base.html" %}
+
+{% block title %} Home Page {% endblock %}
+
+
+
+
+
+{% block content %}
+<div class=adv>
+    {% for post in advert %}
+    {{ post.category }}
+    {{ post.subcategory }}
+    {{ post.title }}
+    {{ post.city }}
+    {{ post.price }}
+{% endfor  %}
+</div>
+
+
+
+
+
+
+{% endblock %}

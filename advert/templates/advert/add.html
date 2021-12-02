@@ -1,0 +1,11 @@
+{% extends 'advert/advert_base.html' %}
+
+{% block title %} Добавить объявление {% endblock %}
+
+{% block content %}
+    <form method='post' action="{% url 'add' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+            <button type='sumbit'>Добавить объявление</button>
+    </form>
+{% endblock %}
